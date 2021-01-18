@@ -11,6 +11,8 @@ php:
 
 install:
 - travis_retry composer install --no-interaction --no-suggest
+- travis_retry npm install
+- npm run prod
 
 # Testing the app (see phpunit.xml) for configs, generating Code Coverage report
 script:
@@ -28,7 +30,6 @@ after_success:
 branches:
   only:
   - master
-  - dev
 
 # You can delete the cache using travis-ci web interface
 cache:
